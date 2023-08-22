@@ -21,6 +21,6 @@ int _putchar(char c)
 	if (c != -1) /* Check if c is not a flush signal */
 		buffer[i++] = c; /* Store c in the buffer and increment index */
 
-	return (i); /* Return the number of characters written (i) */
+	return (1);
 }
 
