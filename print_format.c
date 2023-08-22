@@ -57,7 +57,10 @@ int handle_format_specifier(const char *str, va_list args, int *index)
 
 	format_s formats[] = {
 		{'s', print_string}, {'c', print_char},
-		{'i', print_int}, {'d', print_int}
+		{'i', print_int}, {'d', print_int},
+		{'b', print_binary}, {'u', print_unsigned},
+		{'o', print_octal}, {'x', print_hexadecimal_low},
+		{'X', print_hexadecimal_upp}
 	};
 
 	*index += 1;
