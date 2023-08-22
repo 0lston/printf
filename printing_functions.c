@@ -40,7 +40,7 @@ int print_string(va_list args)
 
 int print_char(va_list args)
 {
-	char character;
+	int character;
 	int ret;
 
 	character = va_arg(args, int);
