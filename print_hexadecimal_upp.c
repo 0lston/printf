@@ -1,38 +1,42 @@
-int print_hexadecimal_upp(va_list args)
+#include "main.h"
+
+/*prototypes*/
+char *to_upper(char *str);
+
+/**
+ * print_HEX - Prints an unsigned integer in uppercase hex representation.
+ * @args: A va_list with the argument to print.
+ *
+ * Return: The total number of characters printed.
+ */
+
+int print_HEX(va_list args)
 {
-	int nbr;
-	int digit;
-	int divisor = 1;
-	int printed = 0;
-	
-	nbr = va_arg(args, int);
-	
-	if (nbr == 0) 
+	unsigned int HEX;
+
+	HEX = va_arg(args, unsigned int);
+
+	return (print(to_upper(convert(HEX, 16))));
+}
+
+/**
+ * to_upper - transforms all lowercase letters
+ *                  of a string to uppercase.
+ * @str: The string to be modified.
+ *
+ * Return: A pointer to the changed string.
+ */
+
+char *to_upper(char *str)
+{
+	int i = 0;
+
+	while (str[i])
 	{
-		_putchar('0');
-		return 1;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
 	}
-	while (nbr / divisor > 15 || nbr / divisor < -15)
-	{	
-		divisor *= 16;
-	}
-	while (divisor > 0)
-	{	
-		digit = nbr / divisor;
-		if (digit >= 0 && digit < 10)
-		{
-			_putchar(digit + '0');
-		} else if (digit >= 0)
-		{
-			_putchar(digit - 10 + 'A');
-		} 
-		else 
-		{
-			_putchar(-digit - 1 + 'F');
-		}
-		printed++;
-		nbr %= divisor;
-		divisor /= 16;
-	}
-	return printed;
+
+	return (str);
 }

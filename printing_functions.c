@@ -31,6 +31,13 @@ int print_string(va_list args)
 	return (str_len);
 }
 
+/**
+ * print_char - Prints a character.
+ * @args: A va_list containing the character to be printed.
+ *
+ * Return: The number of characters printed (always 1).
+ */
+
 int print_char(va_list args)
 {
 	char character;
@@ -39,8 +46,15 @@ int print_char(va_list args)
 	character = va_arg(args, int);
 	ret = _putchar(character);
 
-	return(ret);
+	return (ret);
 }
+
+/**
+ * print_int - Prints an integer.
+ * @args: A va_list containing the integer to be printed.
+ *
+ * Return: The number of digits printed.
+ */
 
 int print_int(va_list args)
 {

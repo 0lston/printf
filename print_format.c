@@ -21,6 +21,8 @@ int handle_printf_format(const char *str, va_list args)
 	{
 		if (str[index] == '%')
 		{
+			if (!str[index + 1])
+				return (-1);
 			format_result = handle_format_specifier(str, args, &index);
 			if (format_result == -1)
 				return (-1);
@@ -58,26 +60,18 @@ int handle_format_specifier(const char *str, va_list args, int *index)
 	format_s formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'i', print_int}, {'d', print_int},
-		{'b', print_binary}, {'u', print_unsigned},
-		{'o', print_octal}, {'x', print_hexadecimal_low},
-		{'X', print_hexadecimal_upp}
-	};
+		{'b', print_binary}, {'x', print_hex},
+		{'X', print_HEX}, {'u', print_unsigned},
+		{'o', print_octal}
+		};
 
 	*index += 1;
-
-	if (str[*index] == '\0')
-		return (-1);
 
 	if (str[*index] == '%')
 	{
 		_putchar('%');
 		return (1);
 	}
-
-	while (str[*index] == ' ' && str[*index])
-		(*index)++;
-	if (!str[*index])
-		return (-1);
 
 	format_count = sizeof(formats) / sizeof(formats[0]);
 

@@ -15,7 +15,7 @@
  *   - ...: Variable arguments to be formatted and printed based on
  *          the format specifiers in the format string.
  *
- * Return : The number of characters printed on success, or -1 on failure.
+ * Return: The number of characters printed on success, or -1 on failure.
  *
  */
 
@@ -35,6 +35,8 @@ int _printf(const char *format, ...)
 	printed = handle_printf_format(format, args);
 
 	va_end(args);
+
+	_putchar(-1);
 
 	return (printed);
 

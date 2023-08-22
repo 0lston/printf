@@ -1,28 +1,15 @@
-unsigned int print_int(va_list args)
+#include "main.h"
+
+/**
+ * print_unsigned - Prints an unsigned integer.
+ * @args: A va_list with the argument to print.
+ *
+ * Return: The total number of characters printed.
+ */
+
+int print_unsigned(va_list args)
 {
-	unsigned int nbr;
-	unsigned int digit;
-	unsigned int divisor = 1;
-	unsigned int printed = 0;
-	
-	nbr = va_arg(args, int);
-	
-	if (nbr == 0)
-	{
-		_putchar('0');
-		return 1;
-	}
-	while (nbr / divisor > 9)
-	{
-		divisor *= 10;
-	}
-	while (divisor > 0)
-	{
-		digit = nbr / divisor;
-		_putchar(digit + '0');
-		printed++;
-		nbr %= divisor;
-		divisor /= 10;
-	}
-	return (printed);
+	unsigned int n = va_arg(args, unsigned int);
+
+	return (print(convert(n, 10)));
 }
