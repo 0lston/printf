@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_octal - Prints an integer in octal representation.
+ * print_octal - Prints an integer in its octal representation.
  * @args: A va_list with the argument to print.
  *
  * Return: The total number of characters printed.
