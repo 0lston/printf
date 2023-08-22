@@ -2,7 +2,7 @@
 
 /**
  * print_unsigned - Prints an unsigned integer.
- * @args: A va_list with the argument to print.
+ * @args: A va_list with the argument to be printed.
  *
  * Return: The total number of characters printed.
  */
