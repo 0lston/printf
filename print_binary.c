@@ -6,9 +6,9 @@
  * @args: A va_list with the argument to print.
  *
  * Description:
- * This function is used as a custom conversion specifier for printf.
+ * This function is used as  custom conversion specifier for printf.
  * It takes an unsigned integer from the va_list, converts it to its binary
- * representation using the convert function, and then prints the result using
+ * representation using convert function, and then prints the result using
  * the print function.
  *
  * Return: The total number of characters printed.
