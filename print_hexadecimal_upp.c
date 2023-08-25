@@ -1,7 +1,5 @@
 #include "main.h"
 
-/*prototypes*/
-char *to_upper(char *str);
 
 /**
  * print_HEX - Prints an unsigned integer in uppercase hex representation.
@@ -19,24 +17,3 @@ int print_HEX(va_list args)
 	return (print(to_upper(convert(HEX, 16))));
 }
 
-/**
- * to_upper - transforms all lowercase letters
- *                  of a string to uppercase.
- * @str: The string to be modified.
- *
- * Return: A pointer to the changed string.
- */
-
-char *to_upper(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-
-	return (str);
-}

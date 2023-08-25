@@ -16,6 +16,8 @@ int _strlen(const char *str)
 {
 	int i = 0;
 
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 
@@ -40,4 +42,26 @@ int print(char *str)
 		_putchar(str[i]);
 
 	return (i);
+}
+
+/**
+ * to_upper - transforms all lowercase letters
+ *                  of a string to uppercase.
+ * @str: The string to be modified.
+ *
+ * Return: A pointer to the changed string.
+ */
+
+char *to_upper(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
+	}
+
+	return (str);
 }

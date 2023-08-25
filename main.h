@@ -23,6 +23,17 @@ typedef struct format_specifier
 	int (*f)(va_list);
 } format_s;
 
+/*
+*typedef struct parameters
+*{
+*	int space : 1;
+*	int plus : 1;
+*	int hashtag : 1;
+*} flags;
+*
+*#define INIT_PARAMS {0,0,0}
+*/
+
 /* _printf.c*/
 int _printf(const char *format, ...);
 
@@ -42,11 +53,17 @@ int print_hex(va_list args);
 int print_HEX(va_list args);
 int print_unsigned(va_list args);
 int print_octal(va_list args);
+int print_p(va_list args);
+
+/* string manipulation */
+int print_rot13(va_list args);
+int print_rev(va_list args);
+int print_ascii(va_list args);
 
 /*helpers*/
 int _strlen(const char *);
 int print(char *str);
 int _putchar(char c);
-
+char *to_upper(char *str);
 
 #endif

@@ -24,9 +24,6 @@ int handle_printf_format(const char *str, va_list args)
 			if (!str[index + 1])
 				return (-1);
 			format_result = handle_format_specifier(str, args, &index);
-			if (format_result == -1)
-				return (-1);
-
 			printed += format_result;
 			continue;
 		}
@@ -62,8 +59,9 @@ int handle_format_specifier(const char *str, va_list args, int *index)
 		{'i', print_int}, {'d', print_int},
 		{'b', print_binary}, {'x', print_hex},
 		{'X', print_HEX}, {'u', print_unsigned},
-		{'o', print_octal}
-		};
+		{'o', print_octal}, {'R', print_rot13},
+		{'p', print_p}, {'r', print_rev},
+		{'S', print_ascii}};
 
 	*index += 1;
 
@@ -88,3 +86,4 @@ int handle_format_specifier(const char *str, va_list args, int *index)
 	_putchar('%'), _putchar(str[*index]);
 	return (2);
 }
+

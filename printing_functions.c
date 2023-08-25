@@ -41,53 +41,9 @@ int print_string(va_list args)
 int print_char(va_list args)
 {
 	int character;
-	int ret;
 
 	character = va_arg(args, int);
-	ret = _putchar(character);
+	_putchar(character);
 
-	return (ret);
-}
-
-/**
- * print_int - Prints an integer.
- * @args: A va_list containing the integer to be printed.
- *
- * Return: The number of digits printed.
- */
-
-int print_int(va_list args)
-{
-	unsigned int num;
-	int nbr;
-	int digit;
-	int divisor = 1;
-	int printed = 0;
-
-	nbr = va_arg(args, int);
-	if (nbr < 0)
-	{
-		num = -nbr;
-		_putchar('-');
-		printed++;
-	}
-	else
-	{
-		num = nbr;
-	}
-
-	while (num / divisor > 9)
-	{
-		divisor *= 10;
-	}
-
-	while (divisor > 0)
-	{
-		digit = num / divisor;
-		_putchar(digit + '0');
-		printed++;
-		num %= divisor;
-		divisor /= 10;
-	}
-	return (printed);
+	return (1);
 }

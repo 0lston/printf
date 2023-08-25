@@ -5,8 +5,9 @@
  *
  * @c: The character to write.
  *
- * Return: The number of characters written (i) or -1 on error.
+ * Return: The number of characters written.
  */
+
 int _putchar(char c)
 {
 	static int i;             /* Static counter for characters stored in buffer */
